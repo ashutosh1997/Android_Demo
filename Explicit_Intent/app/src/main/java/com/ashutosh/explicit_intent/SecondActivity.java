@@ -5,4 +5,5 @@ package com.ashutosh.explicit_intent;
  */
 
 public class SecondActivity {
+
 }
