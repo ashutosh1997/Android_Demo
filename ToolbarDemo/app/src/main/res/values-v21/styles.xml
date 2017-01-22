@@ -1,0 +1,9 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="MaterialTheme" parent="ParentMaterialTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:navigationBarColor">#00796B</item>
+    </style>
+
+</resources>
