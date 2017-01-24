@@ -1,11 +1,14 @@
 package com.ashutosh.recyclerview.application;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import com.ashutosh.recyclerview.R;
 import com.ashutosh.recyclerview.adapter.RecyclerAdapter;
@@ -29,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setUpRecyclerView();
 
         
-        /*toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 String msg = "";
@@ -54,12 +57,13 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.Exit:
                         msg = "Exit";
+                        onBackPressed();
                         break;
                 }
-                Toast.makeText(MainActivity.this,msg+" clicked !",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this,msg+" clicked !",Toast.LENGTH_SHORT).show();
                 return true;
             }
-        });*/
+        });
 
     }
 
@@ -74,6 +78,30 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(mLinearLayoutManagerVertical);
 
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setMessage("Are you sure?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //if user pressed "yes", then he is allowed to exit from application
+                //finish();
+                android.os.Process.killProcess(android.os.Process.myPid());
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //if user select "No", just cancel this dialog and continue with app
+                dialog.cancel();
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
 }
