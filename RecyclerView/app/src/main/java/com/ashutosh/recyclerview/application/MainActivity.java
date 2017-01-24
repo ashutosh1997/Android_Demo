@@ -2,9 +2,14 @@ package com.ashutosh.recyclerview.application;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import com.ashutosh.recyclerview.R;
+import com.ashutosh.recyclerview.adapter.RecyclerAdapter;
+import com.ashutosh.recyclerview.model.Landscape;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -60,6 +65,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void setUpRecyclerView() {
 
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        RecyclerAdapter adapter = new RecyclerAdapter(this, Landscape.getData());
+        recyclerView.setAdapter(adapter);
+
+        LinearLayoutManager mLinearLayoutManagerVertical = new LinearLayoutManager(this);
+        mLinearLayoutManagerVertical.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(mLinearLayoutManagerVertical);
+
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
     }
 
 }
