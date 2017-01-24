@@ -67,7 +67,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-        Log.d(TAG, "onBindViewHolder"+position);
+        Log.d(TAG, "onBindViewHolder "+position);
         Landscape currentObj = mData.get(position);
         holder.setData(currentObj,position);
 
