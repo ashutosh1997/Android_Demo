@@ -1,8 +1,16 @@
 package com.ashutosh.recyclerview.model;
 
+import android.app.Activity;
+import android.database.Cursor;
+import android.net.Uri;
+import android.provider.MediaStore;
+
 import com.ashutosh.recyclerview.R;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 public class Landscape {
 
@@ -60,14 +68,8 @@ public class Landscape {
 
     public static int[] getImages() {
 
-        /*int[] images=new int[10];
-        String temp;
-        for (int i=0;i<10;i++)
-        {
-            temp="R.drawable.thumb_1_"+i;
-            images[i]= Integer.parseInt(temp);
-        }*/
         int[] images = {
+
                 R.drawable.thumb_1_0, R.drawable.thumb_1_1, R.drawable.thumb_1_2, R.drawable.thumb_1_3,
                 R.drawable.thumb_1_4, R.drawable.thumb_1_5, R.drawable.thumb_1_6, R.drawable.thumb_1_7,
                 R.drawable.thumb_1_8, R.drawable.thumb_1_9,
@@ -95,9 +97,7 @@ public class Landscape {
                 R.drawable.thumb_7_0, R.drawable.thumb_7_1, R.drawable.thumb_7_2, R.drawable.thumb_7_3,
                 R.drawable.thumb_7_4
         };
-
-
         return images;
-
     }
 }
+
