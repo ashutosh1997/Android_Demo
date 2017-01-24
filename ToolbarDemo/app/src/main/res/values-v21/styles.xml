@@ -3,7 +3,7 @@
     <!-- Base application theme. -->
     <style name="MaterialTheme" parent="ParentMaterialTheme">
         <!-- Customize your theme here. -->
-        <item name="android:navigationBarColor">#00796B</item>
+        <item name="android:navigationBarColor">#0097A7</item>
     </style>
 
 </resources>
