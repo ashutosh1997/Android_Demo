@@ -4,9 +4,19 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ashutosh.toolbardemo.MainActivity">
+    tools:context="com.ashutosh.toolbardemo.ToolBarAsActionBar">
 
    <include layout="@layout/toolbar"
        android:id="@+id/toolbar"/>
+
+    <Button
+        android:text="Button"
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/button" />
+
 
 </RelativeLayout>
