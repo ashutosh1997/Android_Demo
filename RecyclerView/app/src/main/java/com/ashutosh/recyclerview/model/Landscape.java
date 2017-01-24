@@ -51,7 +51,7 @@ public class Landscape {
         {
             Landscape landscape = new Landscape();
             landscape.setImageID(images[i]);
-            landscape.setTitle("Lacdscape "+i);
+            landscape.setTitle("Landscape "+i);
 
             dataList.add(landscape);
         }
